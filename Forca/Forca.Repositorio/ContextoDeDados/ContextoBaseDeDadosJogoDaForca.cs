@@ -1,4 +1,5 @@
 ﻿using Forca.Dominio;
+using Forca.Dominio.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -16,6 +17,8 @@ namespace Forca.Repositorio.ContextoDeDados
         }
 
         public DbSet<Palavra> Palavra { get; set; }
+
+        public DbSet<Jogador> Jogador { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
