@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>cc8d3056-9dc6-4ed8-8d65-717c1de0f6e2</ProjectGuid>
+    <ProjectGuid>af78c5a7-e1c3-4c3b-bcf9-c849b39c2a3b</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Forca.Repositorio</RootNamespace>
