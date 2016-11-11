@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Forca.Dominio
+namespace Forca.Dominio.Servico
 {
-    public class Class1
+    class ServicoPalavra
     {
     }
 }
