@@ -8,9 +8,9 @@ namespace Forca.Dominio.Servico
 {
     public class ServicoPalavra
     {
-        public string EsconderPalavra(string palavra)
+        public string EsconderPalavra(Palavra palavra)
         {
-            string[] palavraSeparada = palavra.Split(null);
+            string[] palavraSeparada = palavra.Composicao.Split(null);
             string palavraEscondida = "";
 
             foreach(string parte in palavraSeparada)
