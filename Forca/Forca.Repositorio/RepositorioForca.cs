@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Forca.Dominio;
+using Forca.Repositorio.ContextoDeDados;
 
 namespace Forca.Repositorio
 {
@@ -12,7 +13,10 @@ namespace Forca.Repositorio
     {
         public IEnumerable<Palavra> ListarPalavras()
         {
-            throw new NotImplementedException();
+            using (var contexto = new ContextoBaseDeDados())
+            {
+                return contexto.Palavra.ToList();
+            }
         }
 
         public void SalvarPontuacaoJogador()
