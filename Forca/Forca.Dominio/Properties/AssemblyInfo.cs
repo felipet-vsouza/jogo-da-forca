@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Forca.Repositorio")]
+[assembly: AssemblyTitle("Forca.Dominio")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Forca.Repositorio")]
+[assembly: AssemblyProduct("Forca.Dominio")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("af78c5a7-e1c3-4c3b-bcf9-c849b39c2a3b")]
+[assembly: Guid("e98e306e-c62e-41f2-87bf-0667a3a2258a")]
 
 // Version information for an assembly consists of the following four values:
 //
