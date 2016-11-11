@@ -15,7 +15,19 @@ namespace Forca.Test
             ServicoPalavra servico = new ServicoPalavra();
             string palavraEscondida = servico.EsconderPalavra(palavra);
 
-            Assert.AreEqual(palavraEscondida, "------");
+            Assert.AreEqual("------", palavraEscondida);
         }
+
+        [TestMethod]
+        public void DeveEsconderPalavraComposta()
+        {
+            string palavra = "banana caturra";
+
+            ServicoPalavra servico = new ServicoPalavra();
+            string palavraEscondida = servico.EsconderPalavra(palavra);
+
+            Assert.AreEqual("------ -------", palavraEscondida);
+        }
+
     }
 }

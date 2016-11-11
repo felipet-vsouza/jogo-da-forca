@@ -10,8 +10,17 @@ namespace Forca.Dominio.Servico
     {
         public string EsconderPalavra(string palavra)
         {
-            int tamanho = palavra.Length;
-            return new String('-', tamanho);
+            string[] palavraSeparada = palavra.Split(null);
+            string palavraEscondida = "";
+
+            foreach(string parte in palavraSeparada)
+            {
+                int tamanho = parte.Length;
+                palavraEscondida += new String('-', tamanho) + " ";
+            }
+            palavraEscondida = palavraEscondida.Remove(palavraEscondida.Length-1);
+            
+            return palavraEscondida;
         }
     }
 }
