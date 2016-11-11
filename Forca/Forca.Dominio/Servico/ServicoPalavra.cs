@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Forca.Dominio.Servico
 {
-    class ServicoPalavra
+    public class ServicoPalavra
     {
+        public string EsconderPalavra(string palavra)
+        {
+            int tamanho = palavra.Length;
+            return new String('-', tamanho);
+        }
     }
 }
