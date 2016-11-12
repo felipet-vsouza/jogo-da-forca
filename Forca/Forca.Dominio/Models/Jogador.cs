@@ -13,5 +13,7 @@ namespace Forca.Dominio.Models
         public string Nome { get; set; }
 
         public int Pontuacao { get; set; }
+
+        public Dificuldade Dificuldade { get; set; }
     }
 }
