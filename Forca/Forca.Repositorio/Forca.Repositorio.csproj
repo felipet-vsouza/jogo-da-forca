@@ -58,6 +58,10 @@
     <Compile Include="Migrations\201611112340533_AdicionandoEntidadeJogador.Designer.cs">
       <DependentUpon>201611112340533_AdicionandoEntidadeJogador.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611120049111_AdicionandoEntidadeRanking.cs" />
+    <Compile Include="Migrations\201611120049111_AdicionandoEntidadeRanking.Designer.cs">
+      <DependentUpon>201611120049111_AdicionandoEntidadeRanking.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositorioForca.cs" />
@@ -77,6 +81,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611112340533_AdicionandoEntidadeJogador.resx">
       <DependentUpon>201611112340533_AdicionandoEntidadeJogador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611120049111_AdicionandoEntidadeRanking.resx">
+      <DependentUpon>201611120049111_AdicionandoEntidadeRanking.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
