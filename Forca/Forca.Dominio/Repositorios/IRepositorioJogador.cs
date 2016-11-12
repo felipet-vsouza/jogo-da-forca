@@ -10,5 +10,7 @@ namespace Forca.Dominio.Repositorios
     public interface IRepositorioJogador
     {
         void SalvarPontuacaoJogador(Jogador jogador);
+
+        IEnumerable<Jogador> LeaderRanking();
     }
 }

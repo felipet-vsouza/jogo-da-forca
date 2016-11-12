@@ -12,6 +12,14 @@ namespace Forca.Repositorio
 {
     public class RepositorioJogador : IRepositorioJogador
     {
+        public IEnumerable<Jogador> LeaderRanking()
+        {
+            using (var contexto = new ContextoBaseDeDados())
+            {
+                return contexto.Jogador.OrderBy(jogador => jogador.Dificuldade).OrderBy(jogador => jogador.Pontuacao).ToList();
+            }
+        }
+
         public void SalvarPontuacaoJogador(Jogador jogador)
         {
             using (var contexto = new ContextoBaseDeDados())
