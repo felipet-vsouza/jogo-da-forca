@@ -8,7 +8,7 @@
     height: 100%;
     align-items: center;
     font-family: 'Neucha', Helvetica, Arial;
-    background-color: #00687e;
+    background-color: #00a5a1;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -37,7 +37,9 @@ header > section {
 }
 
 h1 {
+    font-size: 400%;
     text-align: center;
+    margin: 0;
 }
 
 .opcao_menu {
@@ -49,4 +51,5 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: 50px auto 0;
 }
