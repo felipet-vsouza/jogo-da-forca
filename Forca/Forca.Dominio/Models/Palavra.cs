@@ -9,6 +9,7 @@ namespace Forca.Dominio
     public class Palavra
     {
         public int Id { get; set; }
+
         public string Composicao { get; set; }
     }
 }
