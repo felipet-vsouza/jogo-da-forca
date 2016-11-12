@@ -1,0 +1,44 @@
+﻿/* credits to Gabe Rose on http://codepen.io/pineapplechunk/pen/jFDbl */
+
+button {
+  border-style: solid;
+  margin: 0 20px;
+  height: 55px;
+  width: 125px;
+  border-radius: 2px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom-width: 3px;
+  font-family: 'Neucha';
+}
+
+.submit {
+  margin-top: 20px;
+  background-color: #00d286;
+  border-bottom-color: #92fb97;
+  transition: all ease 200ms;
+  animation: bounce 1s ease-in-out;
+  animation-play-state: paused;
+  animation-iteration-count: infinite;
+}
+
+.submit:hover {
+  background-color: #92fb97;
+  border-bottom-color: #00d286;
+  transition: background-color ease 200ms;
+   transition: border-bottom-width ease 200ms;
+}
+
+.submit:active {
+  border-bottom: none;
+}
+
+@keyframes bounce
+{
+  0% {transform: translateY(0);}
+  25% {transform: translateY(2px);}
+  50% {transform: translateY(0);}
+  75% {transform: translateY(2px);}
+  100% {transform: translateY(0);}
+}
