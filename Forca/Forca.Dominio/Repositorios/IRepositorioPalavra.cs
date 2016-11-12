@@ -9,6 +9,6 @@ namespace Forca.Dominio.Repositorios
 {
     public interface IRepositorioPalavra
     {
-        IEnumerable<Palavra> ListarPalavras();
+        IEnumerable<Palavra> BuscarTodas();
     }
 }
