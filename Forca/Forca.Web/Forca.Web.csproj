@@ -197,10 +197,13 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\App\Jogador.js" />
     <Content Include="Scripts\App\Components\LifeCounter.js" />
+    <Content Include="Scripts\App\telaInicio.js" />
+    <Content Include="Scripts\App\_start.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="App_Readme\Handlebarsjs_README.md" />
     <Content Include="App_Readme\Handlebarsjs_LICENSE" />
+    <Content Include="Scripts\App\Forca.js" />
     <Content Include="Scripts\handlebars.amd.js" />
     <Content Include="Scripts\handlebars.amd.min.js" />
     <Content Include="Scripts\handlebars.js" />

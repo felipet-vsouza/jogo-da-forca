@@ -1,0 +1,3 @@
+﻿$(function () {
+    forca.iniciar();
+});
