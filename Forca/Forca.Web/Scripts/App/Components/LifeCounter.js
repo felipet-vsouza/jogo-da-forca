@@ -5,9 +5,9 @@
     }
 
     loseHeart() {
-        var nthHeart = $(`.heart:nth-of-type(${heartCounter})`);
+        var nthHeart = $(`.heart:nth-of-type(${this.lifeCount})`);
         nthHeart.addClass('beating');
-        heartCounter--;
+        this.lifeCount--;
 
         if (heartCounter <= 0) {
             this.onGameOver();
