@@ -20,6 +20,8 @@ namespace Forca.Repositorio.ContextoDeDados
 
         public DbSet<Jogador> Jogador { get; set; }
 
+        public DbSet<Ranking> Ranking { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
