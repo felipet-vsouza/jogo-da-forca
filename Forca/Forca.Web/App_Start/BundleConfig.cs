@@ -34,6 +34,7 @@ namespace Forca.Web
                 "~/Scripts/app/inicio.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
+                      "~/Content/Fonts.css",
                       "~/Content/Site.css"));
         }
     }
