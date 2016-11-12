@@ -178,6 +178,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JogadorController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -190,7 +191,7 @@
   <ItemGroup>
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\App\inicio.js" />
+    <Content Include="Scripts\App\Jogador.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="App_Readme\Handlebarsjs_README.md" />
@@ -237,6 +238,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Services\" />
+    <Folder Include="Views\Jogador\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -246,6 +248,10 @@
     <ProjectReference Include="..\Forca.Dominio\Forca.Dominio.csproj">
       <Project>{e98e306e-c62e-41f2-87bf-0667a3a2258a}</Project>
       <Name>Forca.Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Forca.Repositorio\Forca.Repositorio.csproj">
+      <Project>{AF78C5A7-E1C3-4C3B-BCF9-C849B39C2A3B}</Project>
+      <Name>Forca.Repositorio</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
