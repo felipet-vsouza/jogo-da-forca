@@ -11,12 +11,13 @@ button {
   border-right: none;
   border-bottom-width: 3px;
   font-family: 'Neucha';
+  color: #f7ece1;
 }
 
 .submit {
   margin-top: 20px;
-  background-color: #00d286;
-  border-bottom-color: #92fb97;
+  background-color: #69995D;
+  border-bottom-color: #78C166;
   transition: all ease 200ms;
   animation: bounce 1s ease-in-out;
   animation-play-state: paused;
@@ -24,8 +25,8 @@ button {
 }
 
 .submit:hover {
-  background-color: #22e397;
-  border-bottom-color: #00d286;
+  background-color: #78C166;
+  border-bottom-color: #69995D;
   transition: background-color ease 200ms;
    transition: border-bottom-width ease 200ms;
 }
@@ -45,17 +46,18 @@ button {
 
 /* credits do Ben Mildren on http://codepen.io/mildrenben/pen/gbddEj */
 form {
-  background-color: #92fb97;
+  background-color: #E0C8AC;
   box-sizing: border-box;
   width: 260px;
   box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.2);
   padding-bottom: 40px;
   border-radius: 3px;
   align-items: center;
-  h1 {
-    box-sizing: border-box;
-    padding: 20px;
-  }
+}
+
+form > h1 {
+  box-sizing: border-box;
+  padding: 20px;
 }
 
 input {
@@ -63,28 +65,33 @@ input {
   display: block;
   border: none;
   padding: 10px 0;
-  border-bottom: solid 1px $color;
+  border-bottom: solid 1px #242038;
   transition: all 0.3s cubic-bezier(.64,.09,.08,1);
   background: linear-gradient(to bottom, rgba(255,255,255,0) 96%, $color 4%);
   background-position: -200px 0;
   background-size: 200px 100%;
+  background-color: #E0C8AC;
   background-repeat: no-repeat;
-  color: darken($color, 20%);
-  &:focus, &:valid {
-    box-shadow: none;
-    outline: none;
-    background-position: 0 0;
-    &::-webkit-input-placeholder {
-      color: $color;
-      font-size: 11px;
-      transform: translateY(-20px);
-      visibility: visible !important;
-    }
-  }
+}
+
+input:focus, input:valid {
+  box-shadow: none;
+  outline: none;
+  background-position: 0 0;
+}
+
+input::-webkit-input-placeholder {
+  color: #242038;
+}
+
+input:focus::-webkit-input-placeholder, input:valid::-webkit-input-placeholder {
+  font-size: 11px;
+  transform: translateY(-20px);
+  visibility: visible !important;
 }
 
 input, button {
-  transition: all 0.6s ease-in-out;
+  transition: all 2.6s ease-in-out;
 }
 
 /* credits to Benjamin Gagne on http://codepen.io/benague/pen/bCkyr */
@@ -97,7 +104,7 @@ input, button {
   color: #fff;
   position: relative;
   display: inline-block;
-  background-color: #00d286;
+  background-color: #69995D;
 }
 
 .btn:active {
@@ -107,5 +114,5 @@ input, button {
 }
 
 .btn:hover {
-  background-color: #22e397;
+  background-color: #78C166;
 }
