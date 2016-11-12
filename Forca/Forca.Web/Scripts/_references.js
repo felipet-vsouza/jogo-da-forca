@@ -1,4 +1,5 @@
 ﻿/// <autosync enabled="true" />
+/// <reference path="app/components/lifecounter.js" />
 /// <reference path="app/jogador.js" />
 /// <reference path="bootstrap.js" />
 /// <reference path="handlebars.amd.min.js" />

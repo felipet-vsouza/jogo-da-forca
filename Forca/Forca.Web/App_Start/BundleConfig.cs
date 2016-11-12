@@ -35,6 +35,7 @@ namespace Forca.Web
                 "~/Scripts/app/Jogador.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
+                      "~/Content/LifeCounter.css",
                       "~/Content/Components.css",
                       "~/Content/Fonts.css",
                       "~/Content/Site.css"));

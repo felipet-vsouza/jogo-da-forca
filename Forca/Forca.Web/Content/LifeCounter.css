@@ -1,0 +1,55 @@
+﻿.lifecounter {
+  display: flex;
+  flex-direction: row;
+}
+
+.heart {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 40px;
+  height: 33px;
+  cursor: pointer;
+}
+
+.heart:before {
+  position: absolute;
+  content: "";
+  left: 20px;
+  top: 0;
+  width: 20px;
+  height: 33px;
+  background: #FF3016;
+  border-radius: 50px 50px 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+.heart:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 33px;
+  background: #FF3016;
+  border-radius: 50px 50px 0 0;
+  transform: rotate(45deg);
+  transform-origin :100% 100%;
+}
+
+.beating {
+  animation: beating .5s 1 alternate;
+}
+
+.beating:before, .beating:after {
+  background: #fff;
+}
+
+@keyframes beating {
+  0% { transform: scale(1) }
+  40% { transform: scale(1.25) }
+  70% { transform: scale(.9) }
+  100% { transform: scale(1) }
+}
