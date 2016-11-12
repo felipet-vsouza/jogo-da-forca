@@ -16,7 +16,7 @@ namespace Forca.Repositorio
         {
             using (var contexto = new ContextoBaseDeDados())
             {
-                return contexto.Jogador.OrderBy(jogador => jogador.Dificuldade).OrderBy(jogador => jogador.Pontuacao).ToList();
+                return contexto.Jogador.ToList().OrderBy(jogador => jogador.Pontuacao);
             }
         }
 

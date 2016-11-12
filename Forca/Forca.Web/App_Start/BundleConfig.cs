@@ -31,7 +31,8 @@ namespace Forca.Web
                "~/Scripts/handlebars.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
-                "~/Scripts/app/inicio.js"));
+                "~/Scripts/app/inicio.js",
+                "~/Scripts/app/Jogador.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/LifeCounter.css",
