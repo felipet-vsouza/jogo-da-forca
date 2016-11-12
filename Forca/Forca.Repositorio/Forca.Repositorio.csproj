@@ -60,7 +60,8 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RepositorioForca.cs" />
+    <Compile Include="RepositorioJogador.cs" />
+    <Compile Include="RepositorioPalavra.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Forca.Dominio\Forca.Dominio.csproj">

@@ -6,10 +6,12 @@ using System.Text;
 using System.Threading.Tasks;
 using Forca.Dominio;
 using Forca.Repositorio.ContextoDeDados;
+using Forca.Dominio.Models;
+using System.Data.Entity;
 
 namespace Forca.Repositorio
 {
-    public class RepositorioForca : IRepositorioForca
+    public class RepositorioPalavra : IRepositorioPalavra
     {
         public IEnumerable<Palavra> ListarPalavras()
         {
@@ -17,11 +19,6 @@ namespace Forca.Repositorio
             {
                 return contexto.Palavra.ToList();
             }
-        }
-
-        public void SalvarPontuacaoJogador()
-        {
-            throw new NotImplementedException();
         }
     }
 }
