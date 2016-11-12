@@ -13,7 +13,7 @@ namespace Forca.Repositorio
 {
     public class RepositorioPalavra : IRepositorioPalavra
     {
-        public IEnumerable<Palavra> ListarPalavras()
+        public IEnumerable<Palavra> BuscarTodas()
         {
             using (var contexto = new ContextoBaseDeDados())
             {

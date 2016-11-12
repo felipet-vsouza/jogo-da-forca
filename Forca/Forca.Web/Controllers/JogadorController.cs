@@ -11,6 +11,7 @@ namespace Forca.Web.Controllers
     public class JogadorController : ApiController
     {
         private IRepositorioJogador jogadores = new RepositorioJogador();
+        
         // GET: Jogador
         [ResponseType(typeof(Jogador))]
         public IHttpActionResult PostJogador(Jogador jogador)
@@ -19,7 +20,7 @@ namespace Forca.Web.Controllers
             {
                 return BadRequest(ModelState);
             }
-
+            
             jogadores.SalvarPontuacaoJogador(jogador);
 
             return Ok();
