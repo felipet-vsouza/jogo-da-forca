@@ -35,6 +35,7 @@ namespace Forca.Web
                 "~/Scripts/app/Forca.js",
                 "~/Scripts/app/telaInicio.js",
                 "~/Scripts/app/telaJogo.js",
+                "~/Scripts/app/Palavra.js",
                 "~/Scripts/app/Jogador.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/app/Components").Include(
