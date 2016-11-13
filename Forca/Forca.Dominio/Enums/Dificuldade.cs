@@ -8,7 +8,7 @@ namespace Forca.Dominio.Models
 {
     public enum Dificuldade
     {
-        Normal,
-        BH
+        Normal = 1,
+        BH = 2
     }
 }
