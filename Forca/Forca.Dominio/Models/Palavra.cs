@@ -11,5 +11,8 @@ namespace Forca.Dominio
         public int Id { get; set; }
 
         public string Composicao { get; set; }
+
+        public string Dica { get; set; }
+
     }
 }
