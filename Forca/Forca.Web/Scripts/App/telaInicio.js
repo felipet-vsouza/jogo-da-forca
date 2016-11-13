@@ -2,13 +2,13 @@
 
     constructor(seletor) {
         this.$elem = $(seletor);
-        this.registrarBindsEventos();
         this.renderizarEstadoInicial();
     }
 
     registrarBindsEventos() {
         this.$formNome = $('#formNome');
         this.$btnSubmit = this.$formNome.find('button[type=submit]');
+        this.$btnSubmit.text('Entrar');
         let self = this;
         let validator = this.$formNome.validate({
             highlight: function (element, errorClass, validClass) {
@@ -36,8 +36,15 @@
     }
 
     renderizarEstadoInicial() {
+        $('.tela-centralizada').removeClass('tela-centralizada');
         this.$elem.show();
-        this.$btnSubmit.attr('disabled', !this.$formNome.valid());
+
+        let self = this;
+        let renderizar = forca.render('.tela', 'inicio', {});
+        renderizar.then(() => {
+            self.registrarBindsEventos();
+            self.$btnSubmit.attr('disabled', !self.$formNome.valid());
+        });
     }
 
 }
