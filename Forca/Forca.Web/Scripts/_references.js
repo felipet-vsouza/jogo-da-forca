@@ -1,6 +1,7 @@
 ﻿/// <autosync enabled="true" />
 /// <reference path="app/_start.js" />
 /// <reference path="app/components/lifecounter.js" />
+/// <reference path="app/components/mainmenu.js" />
 /// <reference path="app/forca.js" />
 /// <reference path="app/jogador.js" />
 /// <reference path="app/telainicio.js" />

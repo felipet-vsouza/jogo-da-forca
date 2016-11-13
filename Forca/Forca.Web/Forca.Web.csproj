@@ -195,6 +195,7 @@
     <Content Include="Content\LifeCounter.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\App\Components\mainMenu.js" />
     <Content Include="Scripts\App\Jogador.js" />
     <Content Include="Scripts\App\Components\LifeCounter.js" />
     <Content Include="Scripts\App\telaInicio.js" />

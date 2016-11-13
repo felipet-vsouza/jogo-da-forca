@@ -9,11 +9,11 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body class="container">
-    <header>
+    <header class="mainMenu">
         <h1>Jogo da Forca</h1>
         <section>
-            <a href="#" class="btn">Leaderboard</a>
-            <a href="#" class="btn">Novo jogo</a>
+            <a href="#" class="btn leaderboardButton">Leaderboard</a>
+            <a href="#" class="btn newGameButton">Novo jogo</a>
         </section>
     </header>
     <section class="tela tela-centralizada">
@@ -23,6 +23,7 @@
     @Scripts.Render("~/bundles/handlebars")
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/app/Components")
     @RenderSection("Scripts", required: false)
 </body>
 </html>

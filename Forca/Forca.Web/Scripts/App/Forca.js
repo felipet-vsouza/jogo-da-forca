@@ -11,6 +11,12 @@ forca.renderizarTela = function (nome) {
         case 'inicio':
             new TelaInicio('#telaInicio');
             break;
+        case 'jogo':
+            alert('Iniciando novo jogo...');
+            break;
+        case 'leaderboard':
+            alert("I'd act like a leaderboard had just appeared if I were you, Stranger.");
+            break;
     }
 
 }
@@ -41,5 +47,6 @@ forca.render = function (viewElementSelector, templateName, data) {
 }
 
 forca.iniciar = function () {
+    forca.mainMenu = new MainMenu();
     return forca.renderizarTela('inicio');
 };
