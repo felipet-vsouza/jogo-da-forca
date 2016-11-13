@@ -1,9 +1,14 @@
-class Jogador {
-    listarJogadoresRankeados() {
-        $.get('/api/Jogador');
-    }
+Jogador = {}
 
-    SalvarJogada() {
-        $.post('/api/Jogador', jogador = { Nome: 'jao', Pontuacao: 10, Dificuldade: 0 });
-    }
+Jogador.SalvarJogada = function(jogador){
+    $.post('/api/Jogador', jogador);
+}   
+      
+Jogador.BuscarJogadoresRankeados = function(){
+         return $.get('/api/Jogador');
 }
+
+
+Jogador.BuscarJogadoresRankeados().done(res => console.log(res));
+ 
+console.log("asdsadsadsa")

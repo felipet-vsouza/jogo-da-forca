@@ -9,7 +9,7 @@
         this.$newGameButton = $('.newGameButton');
 
         this.$leaderboardButton.click(function () {
-            forca.renderizarTela('leaderboard');
+            forca.renderizarTela('LeaderBoard');
         });
 
         this.$newGameButton.click(function () {
