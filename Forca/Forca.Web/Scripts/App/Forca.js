@@ -14,8 +14,9 @@ forca.renderizarTela = function (nome) {
         case 'jogo':
             new TelaJogo('#telaJogo');
             break;
-        case 'leaderboard':
-            alert("I'd act like a leaderboard had just appeared if I were you, Stranger.");
+        case 'LeaderBoard':
+            new TelaRanking('#telaRanking');
+            //alert("I'd act like a leaderboard had just appeared if I were you, Stranger.");
             break;
     }
 
