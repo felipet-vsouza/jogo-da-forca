@@ -12,7 +12,7 @@ forca.renderizarTela = function (nome) {
             new TelaInicio('#telaInicio');
             break;
         case 'jogo':
-            alert('Iniciando novo jogo...');
+            new TelaJogo('#telaJogo');
             break;
         case 'leaderboard':
             alert("I'd act like a leaderboard had just appeared if I were you, Stranger.");

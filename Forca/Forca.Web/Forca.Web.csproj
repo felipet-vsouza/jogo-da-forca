@@ -199,6 +199,7 @@
     <Content Include="Scripts\App\Jogador.js" />
     <Content Include="Scripts\App\Components\LifeCounter.js" />
     <Content Include="Scripts\App\telaInicio.js" />
+    <Content Include="Scripts\App\telaJogo.js" />
     <Content Include="Scripts\App\_start.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -241,6 +242,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Static\Templates\jogo.tpl.html" />
     <Content Include="Static\Templates\inicio.tpl.html" />
   </ItemGroup>
   <ItemGroup>

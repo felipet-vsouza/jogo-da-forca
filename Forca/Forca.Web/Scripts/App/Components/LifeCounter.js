@@ -9,7 +9,7 @@
         nthHeart.addClass('beating');
         this.lifeCount--;
 
-        if (heartCounter <= 0) {
+        if (this.lifeCount <= 0) {
             this.onGameOver();
         }
     }

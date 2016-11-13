@@ -5,6 +5,7 @@
 /// <reference path="app/forca.js" />
 /// <reference path="app/jogador.js" />
 /// <reference path="app/telainicio.js" />
+/// <reference path="app/telajogo.js" />
 /// <reference path="bootstrap.js" />
 /// <reference path="handlebars.amd.min.js" />
 /// <reference path="handlebars.min.js" />

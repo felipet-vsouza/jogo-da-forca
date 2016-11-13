@@ -6,11 +6,10 @@
 .heart {
   position: relative;
   top: 50%;
-  left: 50%;
-  display: block;
+  left: 0%;
+  display: inline;
   width: 40px;
   height: 33px;
-  cursor: pointer;
 }
 
 .heart:before {
