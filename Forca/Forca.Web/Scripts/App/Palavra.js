@@ -14,4 +14,8 @@
             });
     }
 
+    esconderPalavra(palavra) {
+        return palavra.replace(/\S/g, '-');
+    }
+
 }
