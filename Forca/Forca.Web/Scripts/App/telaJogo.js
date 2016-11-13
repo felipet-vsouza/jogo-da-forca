@@ -1,7 +1,6 @@
 ﻿class TelaJogo {
     constructor(seletor) {
         this.$elem = $(seletor);
-        this.lifeCounter = new LifeCounter(5); // a quantidade vai depender da dificuldade
         this.renderizarEstadoInicial();
     }
 
@@ -24,6 +23,17 @@
         let renderizar = forca.render('.tela', 'jogo', {});
         renderizar.then(() => {
             self.registrarBindsEventos();
-        })
+            var onGameOver = function () {
+                alert("Game over!!!");
+            }
+            switch (forca.player.dificulty) {
+                case Dificuldade.Normal:
+                    this.lifeCounter = new LifeCounter(5, onGameOver);
+                    break;
+                case Dificuldade.Bh:
+                    this.lifeCounter = new LifeCounter(2, onGameOver);
+                    break;
+            }
+        });
     }
 }

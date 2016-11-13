@@ -196,7 +196,9 @@
     <Content Include="Content\LifeCounter.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\App\Components\dificuldade.js" />
     <Content Include="Scripts\App\Components\mainMenu.js" />
+    <Content Include="Scripts\handlebars_ext.js" />
     <Content Include="Scripts\App\Jogador.js" />
     <Content Include="Scripts\App\Components\LifeCounter.js" />
     <Content Include="Scripts\App\Palavra.js" />
@@ -233,6 +235,7 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Static\Templates\LeaderBoard.tpl.html" />
+    <Content Include="Static\Templates\lifecounter.tpl.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

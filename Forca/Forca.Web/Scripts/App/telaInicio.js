@@ -36,6 +36,7 @@
                 self.$btnSubmit.attr('disabled', true);
                 var dificuldade = self.$formNome.find('input[name=dif]:checked').val();
                 var nome = self.$inputNome.val();
+                dificuldade = parseInt(dificuldade);
                 forca.player.name = nome;
                 forca.player.dificulty = dificuldade;
                 setTimeout(function () {

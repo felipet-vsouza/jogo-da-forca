@@ -28,7 +28,8 @@ namespace Forca.Web
                 "~/Scripts/jquery.validate*"));
 
             bundles.Add(new ScriptBundle("~/bundles/handlebars").Include(
-               "~/Scripts/handlebars.js"));
+               "~/Scripts/handlebars.js",
+               "~/Scripts/handlebars_ext.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
                 "~/Scripts/app/_start.js",
@@ -41,6 +42,7 @@ namespace Forca.Web
 
             bundles.Add(new ScriptBundle("~/bundles/app/Components").Include(
                 "~/Scripts/app/Components/mainMenu.js",
+                "~/Scripts/app/Components/dificuldade.js",
                 "~/Scripts/app/Components/LifeCounter.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
