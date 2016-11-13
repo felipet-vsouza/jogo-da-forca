@@ -12,17 +12,25 @@ using Forca.Dominio;
 using Forca.Repositorio.ContextoDeDados;
 using Forca.Dominio.Repositorios;
 using Forca.Repositorio;
+using Forca.Web.Services;
 
 namespace Forca.Web.Controllers
 {
     public class PalavrasController : ApiController
     {
-        private IRepositorioPalavra palavras = new RepositorioPalavra();
+        private IRepositorioPalavra palavras = ServicoDeDependencias.MontarPalavrasRepositorio();
 
-        // GET: api/Palavras
-        public IEnumerable<Palavra> GetPalavra()
+        public IHttpActionResult GetPalavra()
         {
-            return palavras.BuscarTodas();
+            // simulando lentidão
+            //System.Threading.Thread.Sleep(1500);
+
+            var registros = palavras.BuscarTodas();
+
+            return Ok(new
+            {
+                dados = registros
+            });
         }
     }
 }

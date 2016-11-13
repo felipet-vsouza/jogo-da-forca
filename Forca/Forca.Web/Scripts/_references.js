@@ -4,6 +4,7 @@
 /// <reference path="app/components/mainmenu.js" />
 /// <reference path="app/forca.js" />
 /// <reference path="app/jogador.js" />
+/// <reference path="app/palavra.js" />
 /// <reference path="app/telainicio.js" />
 /// <reference path="bootstrap.js" />
 /// <reference path="handlebars.amd.min.js" />
