@@ -27,15 +27,19 @@ namespace Forca.Web.Controllers
         }
 
         [ResponseType(typeof(Jogador))]
-        public IHttpActionResult GetJogador()
+        public IHttpActionResult GetJogador(int pagina = 1)
         {
-            IEnumerable<Jogador> jogador = jogadores.LeaderRanking();
+            IEnumerable<Jogador> jogador = jogadores.LeaderRanking(pagina, 5);
+            int qtdJodgadores = jogadores.QuantidadeJogadores();    
             if (jogador == null)
             {
                 return NotFound();
             }
 
-            return Ok(jogador);
+            return Ok(new {
+                 qtd = qtdJodgadores,
+                 registros = jogador
+            });
         }
     }
 }

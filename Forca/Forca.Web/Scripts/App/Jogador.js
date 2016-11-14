@@ -4,8 +4,8 @@ Jogador.SalvarJogada = function(jogador){
     $.post('/api/Jogador', jogador);
 }   
       
-Jogador.BuscarJogadoresRankeados = function(){
-    return $.get('/api/Jogador');
+Jogador.BuscarJogadoresRankeados = function (paginaAtual) {
+    return $.get('/api/Jogador', { pagina: paginaAtual });
 }
 
 class Player {
