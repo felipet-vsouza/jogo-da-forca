@@ -1,24 +1,32 @@
 ﻿class TelaJogo {
-    constructor(seletor) {
+    constructor(seletor, palavra) {
         this.$elem = $(seletor);
         this.renderizarEstadoInicial();
+        this.palavra = palavra;
+    }
+
+    letraInserida(letra) {
+        if ("BANANA".includes(letra)) {
+            alert("Acertou!");
+        } else {
+            this.lifeCounter.loseHeart();
+        }
     }
 
     registrarBindsEventos() {
+        let self = this;
+        $('body').keydown(p => {
+            let event = p.originalEvent;
+            if(event.keyCode >= 65 && event.keyCode <= 90) {
+                self.letraInserida(event.key.toUpperCase());
+            }
+        });
     }
 
     renderizarEstadoInicial() {
         $('.tela-centralizada').removeClass('tela-centralizada');
         this.$elem.show();
-        //let self = this;
 
-        /*$.get('/api/herois')
-          .done(function (res) {
-              let renderizar = forca.render('.tela', 'jogo', {});
-              renderizar.then(() => {
-                  this.registrarBindsEventos(this);
-              })
-          }.bind(this));*/
         let self = this;
         let renderizar = forca.render('.tela', 'jogo', {});
         renderizar.then(() => {
