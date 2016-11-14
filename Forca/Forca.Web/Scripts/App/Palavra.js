@@ -50,8 +50,6 @@
         forca.render('.palavra', 'palavra', {
             palavraOculta: this.palavraOculta,
             dica: this.dica
-        }).then(p => {
-            $('.loader-full').hide();
         });
         forca.render('.hud', 'hud', {
           pontos: forca.player.points,

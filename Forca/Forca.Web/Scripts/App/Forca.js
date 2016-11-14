@@ -62,3 +62,7 @@ forca.salvarJogador = function () {
         Dificuldade: playa.dificulty
     });
 };
+
+forca.toggleLoader = () => {
+  ['.loader-full'].forEach(seletor => $(seletor).toggle());
+};
