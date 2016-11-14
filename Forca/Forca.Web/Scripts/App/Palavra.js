@@ -25,7 +25,9 @@
         //Percorre o array de IDs Existentes: caso o id já esteja registrado retorna ao método de buscarPalavra
         //senão adiciona novo id e retorna a palavra adicionada
         var jaFoiUsada = !!idExistentes.find(idE => idE === id);
-        if (jaFoiUsada) {
+        //Se o jogo estiver na dificuldade BH, a palavra deve possuir 12 ou mais caracteres
+        var competeComDificuldade = forca.player.dificulty == 1 || composicao.length >= 12;
+        if (jaFoiUsada || !competeComDificuldade) {
             this.buscarPalavraSorteada();
         } else {
             idExistentes.push(palavraEncontrada.Id);
