@@ -1,6 +1,11 @@
 ﻿class TelaInicio {
 
     constructor(seletor) {
+        if (!!forca.player.name) {
+            let playa = forca.player;
+            alert(`Salvando jogo de ${playa.name} com ${playa.points} na dificuldade ${playa.dificulty}`);
+            forca.player = new Player();
+        }
         this.$elem = $(seletor);
         this.renderizarEstadoInicial();
     }
@@ -8,6 +13,7 @@
     registrarBindsEventos() {
         this.$formNome = $('#formNome');
         this.$btnSubmit = this.$formNome.find('button[type=submit]');
+        this.$inputNome = this.$formNome.find('input[type=text]');
         this.$btnSubmit.text('Entrar');
         let self = this;
         let validator = this.$formNome.validate({
@@ -28,6 +34,11 @@
             submitHandler: function () {
                 self.$btnSubmit.text('Carregando...');
                 self.$btnSubmit.attr('disabled', true);
+                var dificuldade = self.$formNome.find('input[name=dif]:checked').val();
+                var nome = self.$inputNome.val();
+                dificuldade = parseInt(dificuldade);
+                forca.player.name = nome;
+                forca.player.dificulty = dificuldade;
                 setTimeout(function () {
                     forca.renderizarTela('jogo');
                 }, 2000);

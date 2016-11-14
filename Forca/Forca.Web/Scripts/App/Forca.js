@@ -49,5 +49,6 @@ forca.render = function (viewElementSelector, templateName, data) {
 
 forca.iniciar = function () {
     forca.mainMenu = new MainMenu();
+    forca.player = new Player();
     return forca.renderizarTela('inicio');
 };

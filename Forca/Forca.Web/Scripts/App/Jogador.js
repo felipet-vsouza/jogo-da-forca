@@ -1,14 +1,17 @@
-Jogador = {}
+var Jogador = {};
 
 Jogador.SalvarJogada = function(jogador){
     $.post('/api/Jogador', jogador);
 }   
       
 Jogador.BuscarJogadoresRankeados = function(){
-         return $.get('/api/Jogador');
+    return $.get('/api/Jogador');
 }
 
-
-Jogador.BuscarJogadoresRankeados().done(res => console.log(res));
- 
-console.log("asdsadsadsa")
+class Player {
+    constructor() {
+        this.name = undefined;
+        this.points = 0;
+        this.dificulty = 0;
+    }
+}
