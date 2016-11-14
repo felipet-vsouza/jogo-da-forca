@@ -76,3 +76,19 @@ h1 {
 .sub-tela {
     text-align: center;
 }
+
+.hud {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.hud-item {
+    display: inline;
+}
+
+.hud-item:not(:first-of-type) {
+    padding-left: 25px;
+}

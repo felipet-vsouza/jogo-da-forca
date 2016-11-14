@@ -51,6 +51,11 @@
             palavraOculta: this.palavraOculta,
             dica: this.dica
         });
+        forca.render('.hud', 'hud', {
+          pontos: forca.player.points,
+          nome: forca.player.name,
+          dificuldade: forca.player.dificulty == 1 ? 'Normal' : 'BH'
+        });
     }
 
 }

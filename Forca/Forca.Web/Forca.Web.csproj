@@ -235,6 +235,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Static\Templates\hud.tpl.html" />
     <Content Include="Static\Templates\LeaderBoard.tpl.html" />
     <Content Include="Static\Templates\lifecounter.tpl.html" />
     <Content Include="Static\Templates\palavra.tpl.html" />
