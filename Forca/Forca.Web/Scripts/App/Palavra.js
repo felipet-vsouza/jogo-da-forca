@@ -1,15 +1,14 @@
 ﻿class Palavra {
     constructor() {
-        let self = this;
-        this.ready = false;
         this.buscarPalavraSorteada();
     }
 
     //Método de ligação entre a palavra sorteada e o método que verifica se ela ja foi usada. 
     buscarPalavraSorteada() {
-        this.sortearPalavra().done(res =>
-            this.adicionarPalavraSorteadaAoLocalStorage(res.id, res.composicao)
-        )
+        this.sortearPalavra().done(res => {
+            this.dica = res.dica;
+            this.adicionarPalavraSorteadaAoLocalStorage(res.id, res.composicao);
+        })
     }
 
     //Método que faz a requisição da palavra já sorteada 
@@ -23,7 +22,6 @@
         var idExistentes = JSON.parse(localStorage.getItem("idPalavras"));
         if (idExistentes === null) idExistentes = [];
         var palavraEncontrada = { Id: id, Composicao: composicao };
-        console.log(palavraEncontrada);
         var jaFoiUsada = false;
         //Percorre o array de IDs Existentes: caso o id já esteja registrado retorna ao método de buscarPalavra
         //senão adiciona novo id e retorna a palavra adicionada
@@ -37,12 +35,9 @@
             this.buscarPalavraSorteada();
         } else {
             idExistentes.push(palavraEncontrada.Id);
-            let palavraSorteada = palavraEncontrada.Composicao;
             localStorage.setItem("idPalavras", JSON.stringify(idExistentes));
-            console.log('PL ' + palavraSorteada);
-            this.palavra = palavraEncontrada.composicao;
-            this.palavraOculta = this.esconderPalavra(palavraEncontrada.composicao);
-            this.ready = true;
+            this.palavra = palavraEncontrada.Composicao;
+            this.palavraOculta = this.esconderPalavra(palavraEncontrada.Composicao);
         }
     };
 
