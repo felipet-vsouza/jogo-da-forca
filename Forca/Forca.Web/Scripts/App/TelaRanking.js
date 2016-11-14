@@ -5,6 +5,7 @@
     this.paginaAtual = 1;
     this.qtdJogadoresPorPagina = 5;
     this.renderizarEstadoInicial();
+    this.qtdTotalRegistros;
   }
 
   registrarBindsEventos(self) {
@@ -12,12 +13,8 @@
     self.$btnProximaPagina = $('#btn-proxima-pagina');
     self.$btnProximaPagina.on('click', self.obterProximaPagina.bind(self));
 
-    self.$btnProximaPagina = $('#btn-pagina-anterior');
-    self.$btnProximaPagina.on('click', self.obterPaginaAnterior.bind(self));
-      
-    this.$btnPaginaAnterior = $('#paginaAnterior');
-      
-    this.$btnPaginaAnterior.on('click', self.obterPaginaAnterior.bind(self));
+    self.$btnPaginaAnterior = $('#btn-pagina-anterior');
+    self.$btnPaginaAnterior.on('click', self.obterPaginaAnterior.bind(self));
       
     if (self.paginaAtual <= 1) {
               self.$btnPaginaAnterior.attr('disabled', true);
@@ -41,7 +38,8 @@
   }
   
   carregarERenderizarRanking(pagina) {
-    Jogador.BuscarJogadoresRankeados(this.paginaAtual).done(function (res) {
+      Jogador.BuscarJogadoresRankeados(this.paginaAtual).done(function (res) {
+          this.qtdTotalRegistros = res.qtd;
       this.renderizarRanking(res).then(() => {
         this.registrarBindsEventos(this);
       })
@@ -50,8 +48,8 @@
 
   renderizarRanking(res) {
     return new Promise((resolve, reject) => {
-      forca.render('.tela', 'LeaderBoard', {
-        chars: res.map(function (jogador) {
+        forca.render('.tela', 'LeaderBoard', {
+            chars: res.registros.map(function (jogador) {
           return {
             Nome: jogador.nome,
             Pontuacao: jogador.pontuacao
