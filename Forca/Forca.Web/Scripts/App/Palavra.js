@@ -22,16 +22,12 @@
         var idExistentes = JSON.parse(localStorage.getItem("idPalavras"));
         if (idExistentes === null) idExistentes = [];
         var palavraEncontrada = { Id: id, Composicao: composicao };
-        var jaFoiUsada = false;
         //Percorre o array de IDs Existentes: caso o id já esteja registrado retorna ao método de buscarPalavra
         //senão adiciona novo id e retorna a palavra adicionada
-        for (var ide = 0; ide < idExistentes.length; ide++) {
-            var idE = idExistentes[ide];
-            if (idE === palavraEncontrada.Id) {
-                jaFoiUsada = true;
-            }
-        }
-        if (jaFoiUsada) {
+        var jaFoiUsada = !!idExistentes.find(idE => idE === id);
+        //Se o jogo estiver na dificuldade BH, a palavra deve possuir 12 ou mais caracteres
+        var competeComDificuldade = forca.player.dificulty == 1 || composicao.length >= 12;
+        if (jaFoiUsada || !competeComDificuldade) {
             this.buscarPalavraSorteada();
         } else {
             idExistentes.push(palavraEncontrada.Id);
@@ -50,8 +46,6 @@
         forca.render('.palavra', 'palavra', {
             palavraOculta: this.palavraOculta,
             dica: this.dica
-        }).then(p => {
-            $('.loader-full').hide();
         });
         forca.render('.hud', 'hud', {
           pontos: forca.player.points,

@@ -173,6 +173,13 @@ input, button {
 }
 
 /* credits to Tashfeen Ahmad on http://codepen.io/tashfene/pen/raEqrJ */
+.loader-full {
+  flex-direction: column;
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+}
+
 .loader {
   display: inline-block;
   width: 30px;
@@ -211,6 +218,14 @@ input, button {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.centered {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
 }
 
 @keyframes loader-inner {
