@@ -42,10 +42,10 @@
     renderizarEstadoInicial() {
         $('.tela-centralizada').removeClass('tela-centralizada');
         this.$elem.show();
-
         let self = this;
         let renderizar = forca.render('.tela', 'jogo', {});
         renderizar.then(() => {
+            forca.render('.loader-full', 'loader', {});
             self.registrarBindsEventos();
             self.novaPalavra();
         });

@@ -238,6 +238,7 @@
     <Content Include="Static\Templates\hud.tpl.html" />
     <Content Include="Static\Templates\LeaderBoard.tpl.html" />
     <Content Include="Static\Templates\lifecounter.tpl.html" />
+    <Content Include="Static\Templates\loader.tpl.html" />
     <Content Include="Static\Templates\palavra.tpl.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
