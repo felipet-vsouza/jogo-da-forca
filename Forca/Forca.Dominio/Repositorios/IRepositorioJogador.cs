@@ -11,8 +11,8 @@ namespace Forca.Dominio.Repositorios
     {
         void SalvarPontuacaoJogador(Jogador jogador);
 
-        IEnumerable<Jogador> LeaderRanking(int pagina, int tamanhoPagina);
+        IEnumerable<Jogador> LeaderRanking(int pagina, int tamanhoPagina, Dificuldade dificuldade);
 
-        int QuantidadeJogadores();
+        int QuantidadeJogadoresPorDificuldade(Dificuldade dificuldade);
     }
 }

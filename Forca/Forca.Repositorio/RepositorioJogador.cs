@@ -12,11 +12,12 @@ namespace Forca.Repositorio
 {
     public class RepositorioJogador : IRepositorioJogador
     {
-        public IEnumerable<Jogador> LeaderRanking(int pagina, int tamanhoPagina)
+        public IEnumerable<Jogador> LeaderRanking(int pagina, int tamanhoPagina, Dificuldade dificuldade)
         {
             using (var contexto = new ContextoBaseDeDados())
             {
                 return contexto.Jogador
+                    .Where(jog => jog.Dificuldade == dificuldade)
                     .OrderByDescending(_ => _.Pontuacao)
                     .Skip(tamanhoPagina * (pagina - 1))
                     .Take(tamanhoPagina)
@@ -25,13 +26,16 @@ namespace Forca.Repositorio
             }
         }
 
-        public int QuantidadeJogadores()
+        public int QuantidadeJogadoresPorDificuldade(Dificuldade dificuldade)
         {
             using (var contexto = new ContextoBaseDeDados())
             {
-                return contexto.Jogador.Count();
+                return contexto.Jogador
+                        .Where(jog => jog.Dificuldade == dificuldade)
+                        .Count();
             }
         }
+
         public void SalvarPontuacaoJogador(Jogador jogador)
         {
             using (var contexto = new ContextoBaseDeDados())
