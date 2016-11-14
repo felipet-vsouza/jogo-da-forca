@@ -13,7 +13,6 @@
         });
 
         this.$newGameButton.click(function () {
-            $("body").off("keydown");
             forca.renderizarTela('inicio');
         });
     }

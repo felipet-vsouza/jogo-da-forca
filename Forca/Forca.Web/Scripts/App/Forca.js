@@ -7,6 +7,8 @@ forca.renderizarTela = function (nome) {
     $.each($subTelas, (indice, elem) => $(elem).hide());
     let seletor = '';
 
+    $("body").off("keydown");
+
     switch (nome) {
         case 'inicio':
             forca.subtela = new TelaInicio('#telaInicio');
