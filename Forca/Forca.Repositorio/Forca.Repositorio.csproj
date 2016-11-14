@@ -66,9 +66,9 @@
     <Compile Include="Migrations\201611121306214_RetirandoEntidadeRanking.Designer.cs">
       <DependentUpon>201611121306214_RetirandoEntidadeRanking.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201611132238129_AdicionarColunaDicaNaTabelaDePalavras.cs" />
-    <Compile Include="Migrations\201611132238129_AdicionarColunaDicaNaTabelaDePalavras.Designer.cs">
-      <DependentUpon>201611132238129_AdicionarColunaDicaNaTabelaDePalavras.cs</DependentUpon>
+    <Compile Include="Migrations\201611140108512_AdicionandoColunaDicaAPalavra.cs" />
+    <Compile Include="Migrations\201611140108512_AdicionandoColunaDicaAPalavra.Designer.cs">
+      <DependentUpon>201611140108512_AdicionandoColunaDicaAPalavra.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -97,8 +97,8 @@
     <EmbeddedResource Include="Migrations\201611121306214_RetirandoEntidadeRanking.resx">
       <DependentUpon>201611121306214_RetirandoEntidadeRanking.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611132238129_AdicionarColunaDicaNaTabelaDePalavras.resx">
-      <DependentUpon>201611132238129_AdicionarColunaDicaNaTabelaDePalavras.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201611140108512_AdicionandoColunaDicaAPalavra.resx">
+      <DependentUpon>201611140108512_AdicionandoColunaDicaAPalavra.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
