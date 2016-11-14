@@ -20,5 +20,13 @@ namespace Forca.Repositorio
                 return contexto.Palavra.ToList();
             }
         }
+
+        public int ContadorDePalavras()
+        {
+            using(var contexto = new ContextoBaseDeDados())
+            {
+                return contexto.Palavra.Count();
+            }
+        }
     }
 }

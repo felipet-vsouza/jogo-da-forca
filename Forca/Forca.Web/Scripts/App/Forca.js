@@ -7,6 +7,8 @@ forca.renderizarTela = function (nome) {
     $.each($subTelas, (indice, elem) => $(elem).hide());
     let seletor = '';
 
+    $("body").off("keydown");
+
     switch (nome) {
         case 'inicio':
             forca.subtela = new TelaInicio('#telaInicio');
@@ -50,4 +52,13 @@ forca.iniciar = function () {
     forca.mainMenu = new MainMenu();
     forca.player = new Player();
     return forca.renderizarTela('inicio');
+};
+
+forca.salvarJogador = function () {
+    let playa = forca.player;
+    $.post('/api/jogador', {
+        Nome: playa.name,
+        Pontuacao: playa.points,
+        Dificuldade: playa.dificulty
+    });
 };

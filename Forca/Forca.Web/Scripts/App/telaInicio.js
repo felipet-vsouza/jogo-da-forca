@@ -2,8 +2,7 @@
 
     constructor(seletor) {
         if (!!forca.player.name) {
-            let playa = forca.player;
-            alert(`Salvando jogo de ${playa.name} com ${playa.points} na dificuldade ${playa.dificulty}`);
+            forca.salvarJogador();
             forca.player = new Player();
         }
         this.$elem = $(seletor);
