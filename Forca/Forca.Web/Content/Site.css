@@ -72,3 +72,7 @@ h1 {
 .lbTitulo:not(:first-child) {
     padding-left: 20px;
 }
+
+.sub-tela {
+    text-align: center;
+}

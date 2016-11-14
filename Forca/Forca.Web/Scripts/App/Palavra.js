@@ -57,7 +57,8 @@
 
     renderSelf() {
         forca.render('.palavra', 'palavra', {
-            palavraOculta: this.palavraOculta
+            palavraOculta: this.palavraOculta,
+            dica: this.dica
         });
     }
 

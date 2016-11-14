@@ -167,3 +167,7 @@ input, button {
 .switch-field label:last-of-type {
   border-radius: 0 4px 4px 0;
 }
+
+.dica {
+    display: inline;
+}
