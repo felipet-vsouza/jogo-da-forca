@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Forca.Dominio.Repositorios;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,6 +22,17 @@ namespace Forca.Dominio.Servico
             palavraEscondida = palavraEscondida.Remove(palavraEscondida.Length-1);
             
             return palavraEscondida;
+        }
+
+        public Palavra SortearPalavra(IRepositorioPalavra repositorio)
+        {
+            int numeroMaximo = repositorio.BuscarTodas().Count();
+            Random rnd = new Random();
+            int idPalavra = rnd.Next(1, numeroMaximo);
+            
+            Palavra palavraSorteada = (Palavra)repositorio.BuscarTodas().First(palavra => palavra.Id == idPalavra);
+
+            return palavraSorteada;
         }
     }
 }

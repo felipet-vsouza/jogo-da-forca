@@ -13,6 +13,7 @@ using Forca.Repositorio.ContextoDeDados;
 using Forca.Dominio.Repositorios;
 using Forca.Repositorio;
 using Forca.Web.Services;
+using Forca.Dominio.Servico;
 
 namespace Forca.Web.Controllers
 {
@@ -24,13 +25,11 @@ namespace Forca.Web.Controllers
         {
             // simulando lentidão
             //System.Threading.Thread.Sleep(1500);
+            ServicoPalavra servicoPalavra = new ServicoPalavra();
 
-            var registros = palavras.BuscarTodas();
+            var registro = servicoPalavra.SortearPalavra(palavras);
 
-            return Ok(new
-            {
-                dados = registros
-            });
+            return Ok(registro);
         }
     }
 }
