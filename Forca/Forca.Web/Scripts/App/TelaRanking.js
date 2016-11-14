@@ -1,12 +1,21 @@
 ﻿class TelaRanking {
 
-  constructor(seletor) {
-    this.$elem = $(seletor);
-    this.paginaAtual = 1;
-    this.qtdJogadoresPorPagina = 5;
-    this.renderizarEstadoInicial();
-    this.qtdTotalRegistros;
+    constructor(seletor, dificuldade) {
+        this.dificuldade = dificuldade || 1;
+        this.$elem = $(seletor);
+        this.paginaAtual = 1;
+        this.qtdJogadoresPorPagina = 5;
+        this.renderizarEstadoInicial(dificuldade);
+        this.qtdTotalRegistros;
   }
+
+    renderizarJogadoresDificuldadeBh() {
+        return new TelaRanking('#telaRanking', 2)
+    }
+
+    renderizarJogadoresDificuldadeNormal() {
+        return new TelaRanking('#telaRanking', 1)
+    }
 
   registrarBindsEventos(self) {
 
@@ -15,6 +24,12 @@
 
     self.$btnPaginaAnterior = $('#btn-pagina-anterior');
     self.$btnPaginaAnterior.on('click', self.obterPaginaAnterior.bind(self));
+
+    self.$btndificuldadeNormal = $('#btn-dificuldade-normal');
+    self.$btndificuldadeNormal.on('click', self.renderizarJogadoresDificuldadeNormal.bind(self));
+
+    self.$btndificuldadeBh = $('#btn-dificuldade-bh');
+    self.$btndificuldadeBh.on('click', self.renderizarJogadoresDificuldadeBh.bind(self));
       
     if (self.paginaAtual <= 1) {
               self.$btnPaginaAnterior.attr('disabled', true);
@@ -30,15 +45,17 @@
   }
 
   obterProximaPagina() {
-    this.carregarERenderizarRanking(++this.paginaAtual);
+    this.paginaAtual++;
+    this.carregarERenderizarRanking(this.dificuldade);
   }
 
   obterPaginaAnterior() {
-    this.carregarERenderizarRanking(--this.paginaAtual);
+      this.paginaAtual--;
+      this.carregarERenderizarRanking(this.dificuldade);
   }
   
-  carregarERenderizarRanking(pagina) {
-      Jogador.BuscarJogadoresRankeados(this.paginaAtual).done(function (res) {
+  carregarERenderizarRanking(dificuldade) {
+      Jogador.BuscarJogadoresRankeados(this.paginaAtual, dificuldade).done(function (res) {
           this.qtdTotalRegistros = res.qtd;
       this.renderizarRanking(res).then(() => {
         this.registrarBindsEventos(this);
@@ -59,10 +76,10 @@
     });
     }
 
-  renderizarEstadoInicial(paginaAtual) {
+  renderizarEstadoInicial(dificuldade) {
       $('.tela-centralizada').removeClass('tela-centralizada');
       this.$elem.show();
       this.paginaAtual;
-      this.carregarERenderizarRanking(this.pagina);
+      this.carregarERenderizarRanking(dificuldade);
     }
 }
