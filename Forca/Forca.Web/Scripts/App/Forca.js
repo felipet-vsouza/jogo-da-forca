@@ -53,3 +53,12 @@ forca.iniciar = function () {
     forca.player = new Player();
     return forca.renderizarTela('inicio');
 };
+
+forca.salvarJogador = function () {
+    let playa = forca.player;
+    $.post('/api/jogador', {
+        Nome: playa.name,
+        Pontuacao: playa.points,
+        Dificuldade: playa.dificulty
+    });
+};

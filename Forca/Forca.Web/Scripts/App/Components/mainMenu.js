@@ -13,7 +13,12 @@
         });
 
         this.$newGameButton.click(function () {
-            forca.renderizarTela('inicio');
+            if (!!forca.subtela.palavra) {
+                forca.salvarJogador();
+                forca.renderizarTela('jogo');
+            } else {
+                forca.renderizarTela('inicio');
+            }
         });
     }
 }

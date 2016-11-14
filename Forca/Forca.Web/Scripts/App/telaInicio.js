@@ -2,12 +2,7 @@
 
     constructor(seletor) {
         if (!!forca.player.name) {
-            let playa = forca.player;
-            $.post('/api/jogador', {
-                Nome: playa.name,
-                Pontuacao: playa.points,
-                Dificuldade: playa.dificulty
-            });
+            forca.salvarJogador();
             forca.player = new Player();
         }
         this.$elem = $(seletor);
