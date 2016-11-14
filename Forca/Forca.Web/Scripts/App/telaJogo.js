@@ -1,13 +1,13 @@
 ﻿class TelaJogo {
-    constructor(seletor, palavra) {
+    constructor(seletor) {
         this.$elem = $(seletor);
         this.renderizarEstadoInicial();
-        this.palavra = palavra;
+        this.palavra = new Palavra();
     }
 
     letraInserida(letra) {
-        if ("BANANA".includes(letra)) {
-            alert("Acertou!");
+        if (this.palavra.palavra.toUpperCase().includes(letra)) {
+            this.palavra.mostrarLetras(letra);
         } else {
             this.lifeCounter.loseHeart();
         }

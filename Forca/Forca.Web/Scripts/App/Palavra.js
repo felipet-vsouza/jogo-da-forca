@@ -38,6 +38,7 @@
             localStorage.setItem("idPalavras", JSON.stringify(idExistentes));
             this.palavra = palavraEncontrada.Composicao;
             this.palavraOculta = this.esconderPalavra(palavraEncontrada.Composicao);
+            this.renderSelf();
         }
     };
 
@@ -47,10 +48,17 @@
 
     mostrarLetras(letra) {
         for (let i = 0; i < this.palavra.length; i++) {
-            if (this.palavra.charAt(i) == letra) {
+            if (this.palavra.toUpperCase().charAt(i) == letra) {
                 this.palavraOculta = this.palavraOculta.replaceAt(i, letra);
             }
         }
+        this.renderSelf();
+    }
+
+    renderSelf() {
+        forca.render('.palavra', 'palavra', {
+            palavraOculta: this.palavraOculta
+        });
     }
 
 }

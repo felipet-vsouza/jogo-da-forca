@@ -9,14 +9,13 @@ forca.renderizarTela = function (nome) {
 
     switch (nome) {
         case 'inicio':
-            new TelaInicio('#telaInicio');
+            forca.subtela = new TelaInicio('#telaInicio');
             break;
         case 'jogo':
-            new TelaJogo('#telaJogo');
+            forca.subtela = new TelaJogo('#telaJogo');
             break;
         case 'LeaderBoard':
-            new TelaRanking('#telaRanking');
-            //alert("I'd act like a leaderboard had just appeared if I were you, Stranger.");
+            forca.subtela = new TelaRanking('#telaRanking');
             break;
     }
 
