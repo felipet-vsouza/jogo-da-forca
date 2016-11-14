@@ -32,6 +32,7 @@ namespace Forca.Web
                "~/Scripts/handlebars_ext.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
+                "~/Scripts/app/Extensions/general.js",
                 "~/Scripts/app/_start.js",
                 "~/Scripts/app/Forca.js",
                 "~/Scripts/app/telaInicio.js",
