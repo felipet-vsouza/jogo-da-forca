@@ -15,6 +15,7 @@
         this.$newGameButton.click(function () {
             if (!!forca.subtela.palavra) {
                 forca.salvarJogador();
+                forca.player.points = 0;
                 forca.renderizarTela('jogo');
             } else {
                 forca.renderizarTela('inicio');
