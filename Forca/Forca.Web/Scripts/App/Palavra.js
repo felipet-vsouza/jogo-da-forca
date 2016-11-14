@@ -22,15 +22,9 @@
         var idExistentes = JSON.parse(localStorage.getItem("idPalavras"));
         if (idExistentes === null) idExistentes = [];
         var palavraEncontrada = { Id: id, Composicao: composicao };
-        var jaFoiUsada = false;
         //Percorre o array de IDs Existentes: caso o id já esteja registrado retorna ao método de buscarPalavra
         //senão adiciona novo id e retorna a palavra adicionada
-        for (var ide = 0; ide < idExistentes.length; ide++) {
-            var idE = idExistentes[ide];
-            if (idE === palavraEncontrada.Id) {
-                jaFoiUsada = true;
-            }
-        }
+        var jaFoiUsada = !!idExistentes.find(idE => idE === id);
         if (jaFoiUsada) {
             this.buscarPalavraSorteada();
         } else {
