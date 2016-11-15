@@ -26,5 +26,10 @@ namespace Forca.Dominio.Servico
 
             return palavraSorteada;
         }
+
+        public int GetQuantidade()
+        {
+            return this.repositorio.ContadorDePalavras();
+        }
     }
 }

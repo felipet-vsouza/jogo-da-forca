@@ -30,5 +30,18 @@ namespace Forca.Testes
 
             Assert.AreEqual(palavra, sorteada);
         }
+
+        [TestMethod]
+        public void DeveContarPalavras()
+        {
+            Mock<IRepositorioPalavra> mockPalavraRepositorio = new Mock<IRepositorioPalavra>();
+            mockPalavraRepositorio.Setup(pr => pr.ContadorDePalavras()).Returns(5);
+
+            var servico = new ServicoPalavra(mockPalavraRepositorio.Object);
+
+            var quantidade = servico.GetQuantidade();
+
+            Assert.AreEqual(5, quantidade);
+        }
     }
 }

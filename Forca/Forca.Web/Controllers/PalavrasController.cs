@@ -31,5 +31,15 @@ namespace Forca.Web.Controllers
 
             return Ok(registro);
         }
+
+        [Route("api/palavras/quantidade")]
+        [HttpGet]
+        public IHttpActionResult GetQuantidade()
+        {
+            ServicoPalavra servicoPalavra = new ServicoPalavra(palavras);
+
+            var quantidade = servicoPalavra.GetQuantidade();
+            return Ok(quantidade);
+        }
     }
 }
