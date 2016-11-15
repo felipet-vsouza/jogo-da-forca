@@ -6,14 +6,16 @@
     }
 
     loseHeart() {
-        var audio = new Audio('../../Content/Effects/blop.mp3');
-        audio.play();
 
-        var nthHeart = $(`.heart:nth-of-type(${this.lifeCount})`);
-        nthHeart.addClass('beating');
-        this.lifeCount--;
+        if(this.lifeCount > 0) {
+            var audio = new Audio('../../Content/Effects/blop.mp3');
+            audio.play();
 
-        if (this.lifeCount <= 0) {
+            var nthHeart = $(`.heart:nth-of-type(${this.lifeCount})`);
+            nthHeart.addClass('beating');
+            this.lifeCount--;
+        }
+        else {
             this.onGameOver();
         }
     }
