@@ -15,6 +15,14 @@ Jogador.BuscarJogadoresRankeados = function(paginaRequisitada, nivelDificuldade)
     });
 }
 
+Jogador.BuscarUltimosJogadores = function () {
+    return $.get('/api/Jogador/ultimosJogadores')
+    .catch((err) => {
+      console.error('Erro na comunicação com o servidor');
+      console.error(`${err.responseJSON.code} - ${err.responseJSON.message}`);
+    });
+}
+
 class Player {
     constructor() {
         this.name = undefined;

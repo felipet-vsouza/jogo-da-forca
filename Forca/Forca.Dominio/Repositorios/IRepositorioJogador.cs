@@ -13,6 +13,8 @@ namespace Forca.Dominio.Repositorios
 
         IEnumerable<Jogador> LeaderRanking(int pagina, int tamanhoPagina, Dificuldade dificuldade);
 
+        IEnumerable<Jogador> UltimosJogadores();
+
         int QuantidadeJogadoresPorDificuldade(Dificuldade dificuldade);
     }
 }

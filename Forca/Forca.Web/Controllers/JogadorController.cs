@@ -41,5 +41,21 @@ namespace Forca.Web.Controllers
                  registros = jogador
             });
         }
+
+        [Route("api/Jogador/ultimosJogadores")]
+        [ResponseType(typeof(Jogador))]
+        public IHttpActionResult GetUltimosJogadores()
+        {
+            IEnumerable<Jogador> lista = jogadores.UltimosJogadores();
+            if (lista == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(new
+            {
+                registros = lista
+            });
+        }
     }
 }

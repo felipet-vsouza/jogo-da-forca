@@ -8,9 +8,14 @@
         this.$leaderboardButton = $('.leaderboardButton');
         this.$newGameButton = $('.newGameButton');
         this.$resetarPalavrasButton = $('.resetarPalavras');
+        this.$ultimosJogadoresButton = $('.ultimosJogadores');
 
         this.$leaderboardButton.click(function () {
             forca.renderizarTela('LeaderBoard');
+        });
+
+        this.$ultimosJogadoresButton.click(function () {
+          forca.renderizarTela('grafico');
         });
 
         this.$resetarPalavrasButton.click(this.resetarLocalStorageDePalavras);

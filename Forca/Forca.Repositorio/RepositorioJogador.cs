@@ -44,5 +44,16 @@ namespace Forca.Repositorio
                 contexto.SaveChanges();
             }
         }
+
+        public IEnumerable<Jogador> UltimosJogadores()
+        {
+            using (var contexto = new ContextoBaseDeDados())
+            {
+                return contexto.Jogador
+                               .OrderByDescending(jogador => jogador.Id)
+                               .Take(10)
+                               .ToList();
+            }
+        }
     }
 }

@@ -31,6 +31,9 @@ namespace Forca.Web
                "~/Scripts/handlebars.js",
                "~/Scripts/handlebars_ext.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/chart").Include(
+                "~/Scripts/Chart.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
                 "~/Scripts/app/Extensions/general.js",
                 "~/Scripts/app/_start.js",
@@ -39,6 +42,7 @@ namespace Forca.Web
                 "~/Scripts/app/telaJogo.js",
                 "~/Scripts/app/telaRanking.js",
                 "~/Scripts/app/telaGameOver.js",
+                "~/Scripts/app/telaGrafico.js",
                 "~/Scripts/app/Palavra.js",
                 "~/Scripts/app/Jogador.js"));
 
