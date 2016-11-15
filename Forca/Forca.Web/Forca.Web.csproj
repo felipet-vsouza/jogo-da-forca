@@ -192,6 +192,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Components.css" />
+    <Content Include="Content\Effects\gameover.wav" />
     <Content Include="Content\Fonts.css" />
     <Content Include="Content\LifeCounter.css" />
     <Content Include="favicon.ico" />

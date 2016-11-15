@@ -62,7 +62,7 @@
     novaPalavra() {
         let self = this;
         var onGameOver = function () {
-            alert(`Game over!!! Palavra correta: ${self.palavra.palavra}`);
+            //alert(`Game over!!! Palavra correta: ${self.palavra.palavra}`);
             forca.renderizarTela('game-over');
         }
         switch (forca.player.dificulty) {
