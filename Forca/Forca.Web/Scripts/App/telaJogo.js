@@ -37,9 +37,11 @@
     }
 
     letraInserida(letra) {
+        if (this.palavra.palavraOculta.toUpperCase().includes(letra))
+            return;
         if (this.palavra.palavra.toUpperCase().includes(letra)) {
             this.mostrarLetras(letra);
-            if(!!this.timer)
+            if (!!this.timer)
                 this.timer.resetCount()
         } else {
             this.lifeCounter.loseHeart();
