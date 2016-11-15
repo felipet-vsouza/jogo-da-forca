@@ -7,10 +7,13 @@
     registrarBindsEventos() {
         this.$leaderboardButton = $('.leaderboardButton');
         this.$newGameButton = $('.newGameButton');
+        this.$resetarPalavrasButton = $('.resetarPalavras');
 
         this.$leaderboardButton.click(function () {
             forca.renderizarTela('LeaderBoard');
         });
+
+        this.$resetarPalavrasButton.click(this.resetarLocalStorageDePalavras);
 
         this.$newGameButton.click(function () {
             if (!!forca.subtela.palavra) {
@@ -21,5 +24,9 @@
                 forca.renderizarTela('inicio');
             }
         });
+    }
+
+    resetarLocalStorageDePalavras() {
+        localStorage.clear();
     }
 }

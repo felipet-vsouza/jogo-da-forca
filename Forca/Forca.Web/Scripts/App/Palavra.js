@@ -14,7 +14,7 @@
     //Método que faz a requisição da palavra já sorteada 
     sortearPalavra() {
         return $.get('/api/palavras').catch((err) => {
-            console.error('Erro na comunicação com o seridor');
+            console.error('Erro na comunicação com o servidor');
             console.error(`${err.responseJSON.code} - ${err.responseJSON.message}`);
         });
     }
