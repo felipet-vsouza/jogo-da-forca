@@ -22,7 +22,7 @@ namespace Forca.Dominio.Servico
             int numeroMaximo = palavras.Count();
 
             Random rnd = new Random();
-            int indiceSorteado = rnd.Next(0, numeroMaximo-1);
+            int indiceSorteado = rnd.Next(0, numeroMaximo);
 
             return palavras.ElementAt(indiceSorteado);
         }
