@@ -24,10 +24,10 @@ namespace Forca.Web.Controllers
         public IHttpActionResult GetPalavra()
         {
             // simulando lentidão
-            //System.Threading.Thread.Sleep(1500);
-            ServicoPalavra servicoPalavra = new ServicoPalavra();
+            System.Threading.Thread.Sleep(1500);
+            ServicoPalavra servicoPalavra = new ServicoPalavra(palavras);
 
-            var registro = servicoPalavra.SortearPalavra(palavras);
+            var registro = servicoPalavra.SortearPalavra();
 
             return Ok(registro);
         }
