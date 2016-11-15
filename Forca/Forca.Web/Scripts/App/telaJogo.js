@@ -11,7 +11,8 @@
             }
         }
         this.palavra.renderSelf();
-        if (this.palavra.palavra.toUpperCase() === this.palavra.palavraOculta.toUpperCase()) {
+        if (this.palavra.palavraDescoberta()) {
+            this.turnTimerOff();
             this.novaPalavra();
             forca.player.points += 1;
         }
@@ -29,6 +30,8 @@
     letraInserida(letra) {
         if (this.palavra.palavra.toUpperCase().includes(letra)) {
             this.mostrarLetras(letra);
+            if(!!this.timer)
+                this.timer.resetCount()
         } else {
             this.lifeCounter.loseHeart();
         }
@@ -42,10 +45,6 @@
                 self.letraInserida(event.key.toUpperCase());
             }
         });
-    }
-
-    onGameOver() {
-        forca.renderizarTela('game-over');
     }
 
     renderizarEstadoInicial() {
@@ -62,8 +61,12 @@
     novaPalavra() {
         let self = this;
         var onGameOver = function () {
-            //alert(`Game over!!! Palavra correta: ${self.palavra.palavra}`);
+            self.turnTimerOff();
             forca.renderizarTela('game-over');
+        }
+        var onRenderSuccessful = function () {
+            if(!!self.timer && !self.palavra.palavraDescoberta())
+                self.timer.on();
         }
         switch (forca.player.dificulty) {
             case Dificuldade.Normal:
@@ -71,8 +74,14 @@
                 break;
             case Dificuldade.Bh:
                 this.lifeCounter = new LifeCounter(2, onGameOver);
+                this.timer = new Timer(onGameOver);
                 break;
         }
-        this.palavra = new Palavra();
+        this.palavra = new Palavra(onRenderSuccessful);
+    }
+
+    turnTimerOff() {
+        if (!!this.timer)
+            this.timer.resetCount();
     }
 }

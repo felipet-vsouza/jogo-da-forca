@@ -1,8 +1,15 @@
 ﻿class Palavra {
-    constructor() {
+    constructor(onRenderSuccessful) {
+        this.onRenderSuccessful = onRenderSuccessful;
         this.buscarPalavraSorteada();
     }
 
+    palavraDescoberta() {
+        if (this.palavra.toUpperCase() === this.palavraOculta.toUpperCase())
+            return true;
+        return false;
+    }
+    
     //Método de ligação entre a palavra sorteada e o método que verifica se ela ja foi usada. 
     buscarPalavraSorteada() {
         this.sortearPalavra().done(res => {
@@ -49,7 +56,7 @@
         forca.render('.palavra', 'palavra', {
             palavraOculta: this.palavraOculta,
             dica: this.dica
-        });
+        }).then(p => this.onRenderSuccessful());
         forca.render('.hud', 'hud', {
           pontos: forca.player.points,
           nome: forca.player.name,
