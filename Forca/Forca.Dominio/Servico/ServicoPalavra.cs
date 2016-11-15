@@ -18,13 +18,13 @@ namespace Forca.Dominio.Servico
 
         public Palavra SortearPalavra()
         {
-            int numeroMaximo = this.repositorio.ContadorDePalavras();
-            Random rnd = new Random();
-            int idPalavra = rnd.Next(1, numeroMaximo);
-            
-            Palavra palavraSorteada = (Palavra) this.repositorio.BuscarTodas().First(palavra => palavra.Id == idPalavra);
+            var palavras = this.repositorio.BuscarTodas();
+            int numeroMaximo = palavras.Count();
 
-            return palavraSorteada;
+            Random rnd = new Random();
+            int indiceSorteado = rnd.Next(0, numeroMaximo-1);
+
+            return palavras.ElementAt(indiceSorteado);
         }
 
         public int GetQuantidade()
