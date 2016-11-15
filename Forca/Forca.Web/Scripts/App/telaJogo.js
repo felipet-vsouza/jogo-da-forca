@@ -13,7 +13,7 @@
         this.palavra.renderSelf();
         if (this.palavra.palavra.toUpperCase() === this.palavra.palavraOculta.toUpperCase()) {
             this.novaPalavra();
-            forca.player.points += forca.player.dificulty;
+            forca.player.points += 1;
         }
     }
 
