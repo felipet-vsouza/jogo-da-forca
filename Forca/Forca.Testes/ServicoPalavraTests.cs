@@ -22,7 +22,6 @@ namespace Forca.Testes
 
             Mock<IRepositorioPalavra> mockPalavraRepositorio = new Mock<IRepositorioPalavra>();
             mockPalavraRepositorio.Setup(pr => pr.BuscarTodas()).Returns(new List<Palavra> { palavra });
-            mockPalavraRepositorio.Setup(pr => pr.ContadorDePalavras()).Returns(1);
 
             var servico = new ServicoPalavra(mockPalavraRepositorio.Object);
 

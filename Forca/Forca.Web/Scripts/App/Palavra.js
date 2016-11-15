@@ -15,15 +15,15 @@
         this.sortearPalavra().done(res => {
             this.dica = res.dica;
             this.adicionarPalavraSorteadaAoLocalStorage(res.id, res.composicao);
-        })
+        }).catch((err) => {
+            console.error('Erro na comunicação com o servidor');
+            console.error(`${err.responseJSON.code} - ${err.responseJSON.message}`);
+        });
     }
 
     //Método que faz a requisição da palavra já sorteada 
     sortearPalavra() {
-        return $.get('/api/palavras').catch((err) => {
-            console.error('Erro na comunicação com o servidor');
-            console.error(`${err.responseJSON.code} - ${err.responseJSON.message}`);
-        });
+        return $.get('/api/palavras');
     }
 
     //Método que verifica/adiciona palavras ao localStorage. 
