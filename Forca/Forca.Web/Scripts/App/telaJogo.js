@@ -17,7 +17,17 @@
         }
     }
 
-    chutarPalavra(palavraChutada) {
+    desabilitarBodykeyDown() {
+        $('body').off('keydown');
+    }
+
+    habilitarBodykeyDown() {
+        $('body').on('keydown');
+        this.capturarTeclasPressionadas();
+    }
+
+    chutarPalavra() {
+        let palavraChutada = $('#inputPalpite').val();
         if (this.palavra.palavra.toUpperCase() === palavraChutada.toUpperCase()) {
             this.novaPalavra();
             forca.player.points += 2;
@@ -34,11 +44,25 @@
         }
     }
 
-    registrarBindsEventos() {
-        let self = this;
+    capturarTeclasPressionadas() {
         $('body').keydown(p => {
             let event = p.originalEvent;
-            if(event.keyCode >= 65 && event.keyCode <= 90) {
+            if (event.keyCode >= 65 && event.keyCode <= 90) {
+                this.letraInserida(event.key.toUpperCase());
+            }
+        });
+    }
+
+    registrarBindsEventos(self) {
+        self.$inputPalpite = $('#inputPalpite');
+        self.$btnPalpitar = $('.palpitar');
+        self.$inputPalpite.focusin(this.desabilitarBodykeyDown);
+        self.$inputPalpite.focusout(this.habilitarBodykeyDown.bind(this));
+        self.$btnPalpitar.on('click', self.chutarPalavra.bind(this));
+
+        $('body').keydown(p => {
+            let event = p.originalEvent;
+            if (event.keyCode >= 65 && event.keyCode <= 90) {
                 self.letraInserida(event.key.toUpperCase());
             }
         });
@@ -54,7 +78,7 @@
         let self = this;
         let renderizar = forca.render('.tela', 'jogo', {});
         renderizar.then(() => {
-            self.registrarBindsEventos();
+            self.registrarBindsEventos(this);
             self.novaPalavra();
         });
     }
