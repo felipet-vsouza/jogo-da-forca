@@ -19,6 +19,9 @@ forca.renderizarTela = function (nome) {
         case 'LeaderBoard':
             forca.subtela = new TelaRanking('#telaRanking');
             break;
+        case 'game-over':
+            forca.subtela = new TelaGameOver('#telaGameOver');
+            break;
     }
 
 }
