@@ -12,7 +12,6 @@
         }
         this.palavra.renderSelf();
         if (this.palavra.palavraDescoberta()) {
-            this.turnTimerOff();
             this.novaPalavra();
             forca.player.points += 1;
         }
@@ -33,7 +32,7 @@
             this.novaPalavra();
             forca.player.points += 2;
         } else {
-            this.onGameOver();
+            this.onGameOver(this);
         }
     }
 
@@ -82,23 +81,28 @@
         });
     }
 
+    onGameOver(self) {
+        self.turnTimerOff();
+        forca.renderizarTela('game-over');
+    }
+
     novaPalavra() {
         let self = this;
-        var onGameOver = function () {
-            self.turnTimerOff();
-            forca.renderizarTela('game-over');
-        }
-        var onRenderSuccessful = function () {
+        this.turnTimerOff();
+        let onRenderSuccessful = function () {
             if(!!self.timer && !self.palavra.palavraDescoberta())
                 self.timer.on();
         }
+        let gameOver = function () {
+            self.onGameOver(self);
+        }
         switch (forca.player.dificulty) {
             case Dificuldade.Normal:
-                this.lifeCounter = new LifeCounter(5, onGameOver);
+                this.lifeCounter = new LifeCounter(5, gameOver);
                 break;
             case Dificuldade.Bh:
-                this.lifeCounter = new LifeCounter(2, onGameOver);
-                this.timer = new Timer(onGameOver);
+                this.lifeCounter = new LifeCounter(2, gameOver);
+                this.timer = new Timer(gameOver);
                 break;
         }
         this.palavra = new Palavra(onRenderSuccessful);
