@@ -6,6 +6,9 @@
     }
 
     loseHeart() {
+        var audio = new Audio('../../Content/Effects/blop.mp3');
+        audio.play();
+
         var nthHeart = $(`.heart:nth-of-type(${this.lifeCount})`);
         nthHeart.addClass('beating');
         this.lifeCount--;
