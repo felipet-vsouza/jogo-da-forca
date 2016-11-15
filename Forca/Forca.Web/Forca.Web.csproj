@@ -198,6 +198,7 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\App\Components\dificuldade.js" />
     <Content Include="Scripts\App\Components\mainMenu.js" />
+    <Content Include="Scripts\App\Components\timer.js" />
     <Content Include="Scripts\App\Extensions\general.js" />
     <Content Include="Scripts\App\telaGameOver.js" />
     <Content Include="Scripts\handlebars_ext.js" />
@@ -241,6 +242,7 @@
     <Content Include="Static\Templates\LeaderBoard.tpl.html" />
     <Content Include="Static\Templates\lifecounter.tpl.html" />
     <Content Include="Static\Templates\palavra.tpl.html" />
+    <Content Include="Static\Templates\timer.tpl.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

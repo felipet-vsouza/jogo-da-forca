@@ -3,6 +3,7 @@
 /// <reference path="app/components/dificuldade.js" />
 /// <reference path="app/components/lifecounter.js" />
 /// <reference path="app/components/mainmenu.js" />
+/// <reference path="app/components/timer.js" />
 /// <reference path="app/extensions/general.js" />
 /// <reference path="app/forca.js" />
 /// <reference path="app/jogador.js" />
