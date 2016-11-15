@@ -99,3 +99,18 @@ h1 {
 .hud-item:not(:first-of-type) {
     padding-left: 25px;
 }
+
+.hanged {
+    position: absolute;
+    top: 30%;
+    left: 46%;
+    width: 125px;
+    height: 244px;
+    margin: 2% auto;
+    background: url('http://i.imgur.com/QLnsDfn.png') left center;
+    animation: play-hanged 2.1s steps(4) infinite;
+}
+
+@keyframes play-hanged {
+	100% { background-position: 500px; }
+}

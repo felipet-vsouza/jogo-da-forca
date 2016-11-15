@@ -38,6 +38,7 @@ namespace Forca.Web
                 "~/Scripts/app/telaInicio.js",
                 "~/Scripts/app/telaJogo.js",
                 "~/Scripts/app/telaRanking.js",
+                "~/Scripts/app/telaGameOver.js",
                 "~/Scripts/app/Palavra.js",
                 "~/Scripts/app/Jogador.js"));
 
@@ -50,6 +51,7 @@ namespace Forca.Web
                       "~/Content/LifeCounter.css",
                       "~/Content/Components.css",
                       "~/Content/Fonts.css",
+                      "~/Content/GameOver.css",
                       "~/Content/Site.css"));
         }
     }

@@ -7,6 +7,7 @@
 /// <reference path="app/forca.js" />
 /// <reference path="app/jogador.js" />
 /// <reference path="app/palavra.js" />
+/// <reference path="app/telagameover.js" />
 /// <reference path="app/telainicio.js" />
 /// <reference path="app/telajogo.js" />
 /// <reference path="app/telaranking.js" />

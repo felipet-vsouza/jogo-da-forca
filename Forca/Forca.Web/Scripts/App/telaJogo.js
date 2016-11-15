@@ -36,7 +36,7 @@
     }
 
     onGameOver() {
-        forca.renderizarTela('inicio');
+        forca.renderizarTela('game-over');
     }
 
     renderizarEstadoInicial() {
@@ -54,7 +54,7 @@
         let self = this;
         var onGameOver = function () {
             alert(`Game over!!! Palavra correta: ${self.palavra.palavra}`);
-            forca.renderizarTela('inicio');
+            forca.renderizarTela('game-over');
         }
         switch (forca.player.dificulty) {
             case Dificuldade.Normal:
