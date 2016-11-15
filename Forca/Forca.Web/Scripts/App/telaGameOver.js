@@ -11,9 +11,5 @@
 
         let self = this;
         let renderizar = forca.render('.tela', 'game-over', {});
-        renderizar.then(() => {
-            self.registrarBindsEventos();
-            self.$btnSubmit.attr('disabled', !self.$formNome.valid());
-        });
     }
 }

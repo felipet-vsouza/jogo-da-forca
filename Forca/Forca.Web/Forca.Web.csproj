@@ -193,7 +193,6 @@
   <ItemGroup>
     <Content Include="Content\Components.css" />
     <Content Include="Content\Fonts.css" />
-    <Content Include="Content\GameOver.css" />
     <Content Include="Content\LifeCounter.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
