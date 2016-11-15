@@ -44,6 +44,7 @@ namespace Forca.Web
 
             bundles.Add(new ScriptBundle("~/bundles/app/Components").Include(
                 "~/Scripts/app/Components/mainMenu.js",
+                "~/Scripts/app/Components/timer.js",
                 "~/Scripts/app/Components/dificuldade.js",
                 "~/Scripts/app/Components/LifeCounter.js"));
 

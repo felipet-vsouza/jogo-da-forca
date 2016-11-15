@@ -9,15 +9,27 @@ namespace Forca.Dominio.Servico
 {
     public class ServicoPalavra
     {
-        public Palavra SortearPalavra(IRepositorioPalavra repositorio)
-        {
-            int numeroMaximo = repositorio.ContadorDePalavras();
-            Random rnd = new Random();
-            int idPalavra = rnd.Next(1, numeroMaximo);
-            
-            Palavra palavraSorteada = (Palavra)repositorio.BuscarTodas().First(palavra => palavra.Id == idPalavra);
+        private readonly IRepositorioPalavra repositorio;
 
-            return palavraSorteada;
+        public ServicoPalavra(IRepositorioPalavra repositorio)
+        {
+            this.repositorio = repositorio;
+        }
+
+        public Palavra SortearPalavra()
+        {
+            var palavras = this.repositorio.BuscarTodas();
+            int numeroMaximo = palavras.Count();
+
+            Random rnd = new Random();
+            int indiceSorteado = rnd.Next(0, numeroMaximo-1);
+
+            return palavras.ElementAt(indiceSorteado);
+        }
+
+        public int GetQuantidade()
+        {
+            return this.repositorio.ContadorDePalavras();
         }
     }
 }

@@ -24,12 +24,22 @@ namespace Forca.Web.Controllers
         public IHttpActionResult GetPalavra()
         {
             // simulando lentidão
-            //System.Threading.Thread.Sleep(1500);
-            ServicoPalavra servicoPalavra = new ServicoPalavra();
+            System.Threading.Thread.Sleep(1500);
+            ServicoPalavra servicoPalavra = new ServicoPalavra(palavras);
 
-            var registro = servicoPalavra.SortearPalavra(palavras);
+            var registro = servicoPalavra.SortearPalavra();
 
             return Ok(registro);
+        }
+
+        [Route("api/palavras/quantidade")]
+        [HttpGet]
+        public IHttpActionResult GetQuantidade()
+        {
+            ServicoPalavra servicoPalavra = new ServicoPalavra(palavras);
+
+            var quantidade = servicoPalavra.GetQuantidade();
+            return Ok(quantidade);
         }
     }
 }

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forca.Repositorio", "Forca.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forca.Dominio", "Forca.Dominio\Forca.Dominio.csproj", "{E98E306E-C62E-41F2-87BF-0667A3A2258A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forca.Testes", "Forca.Testes\Forca.Testes.csproj", "{925C1D20-8AD7-4F07-9691-3BA0DA55D202}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{E98E306E-C62E-41F2-87BF-0667A3A2258A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E98E306E-C62E-41F2-87BF-0667A3A2258A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E98E306E-C62E-41F2-87BF-0667A3A2258A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{925C1D20-8AD7-4F07-9691-3BA0DA55D202}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{925C1D20-8AD7-4F07-9691-3BA0DA55D202}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{925C1D20-8AD7-4F07-9691-3BA0DA55D202}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{925C1D20-8AD7-4F07-9691-3BA0DA55D202}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

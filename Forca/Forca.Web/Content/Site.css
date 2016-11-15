@@ -68,7 +68,7 @@ h1 {
     color: #242038;
 }
 
-.lbTitulo, .lbConteudo {
+.lbTitulo, .lbConteudo, .time {
     display: inline;
 }
 
@@ -107,7 +107,7 @@ h1 {
     width: 125px;
     height: 244px;
     margin: 2% auto;
-    background: url('http://i.imgur.com/QLnsDfn.png') left center;
+    background: url(/Content/Images/hanged.png) left center;
     animation: play-hanged 2.1s steps(4) infinite;
 }
 
