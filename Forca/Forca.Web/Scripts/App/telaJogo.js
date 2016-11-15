@@ -17,6 +17,15 @@
         }
     }
 
+    chutarPalavra(palavraChutada) {
+        if (this.palavra.palavra.toUpperCase() === palavraChutada.toUpperCase()) {
+            this.novaPalavra();
+            forca.player.points += 2;
+        } else {
+            this.onGameOver();
+        }
+    }
+
     letraInserida(letra) {
         if (this.palavra.palavra.toUpperCase().includes(letra)) {
             this.mostrarLetras(letra);
