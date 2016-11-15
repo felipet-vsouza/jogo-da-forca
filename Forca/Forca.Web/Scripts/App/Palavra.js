@@ -13,7 +13,10 @@
 
     //Método que faz a requisição da palavra já sorteada 
     sortearPalavra() {
-        return $.get('/api/palavras');
+        return $.get('/api/palavras').catch((err) => {
+            console.error('Erro na comunicação com o seridor');
+            console.error(`${err.responseJSON.code} - ${err.responseJSON.message}`);
+        });
     }
 
     //Método que verifica/adiciona palavras ao localStorage. 
