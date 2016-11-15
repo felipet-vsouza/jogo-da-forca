@@ -192,10 +192,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Components.css" />
+    <Content Include="Content\Effects\gameover.wav" />
     <Content Include="Content\Fonts.css" />
     <Content Include="Content\LifeCounter.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Content\Effects\blop.mp3" />
     <Content Include="Scripts\App\Components\dificuldade.js" />
     <Content Include="Scripts\App\Components\mainMenu.js" />
     <Content Include="Scripts\App\Components\timer.js" />
