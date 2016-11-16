@@ -26,11 +26,36 @@
         return $.get('/api/palavras');
     }
 
+    salvarQuantidadeDePalavras() {
+        return $.get('/api/palavras/quantidade').done(res => {
+            localStorage.setItem("quantidadePalavras", JSON.stringify(res));  
+        });
+    }
+
+    localStorageCheio() {
+        var idExistentes = JSON.parse(localStorage.getItem("idPalavras"));
+        var quantidadePalavras = JSON.parse(localStorage.getItem("quantidadePalavras"));
+        if (idExistentes === null) idExistentes = [];
+
+        if (idExistentes.length === quantidadePalavras)
+            return true;
+        return false;
+    }
+
     //Método que verifica/adiciona palavras ao localStorage. 
     adicionarPalavraSorteadaAoLocalStorage(id, composicao) {
         // Pega os registros que estão no local storage
         var idExistentes = JSON.parse(localStorage.getItem("idPalavras"));
         if (idExistentes === null) idExistentes = [];
+
+        this.salvarQuantidadeDePalavras();
+        let localCheio = this.localStorageCheio();
+        if (localCheio) {
+            let tela = new TelaGameOver();
+            tela.renderizarEstadoInicial();
+            localStorage.clear();
+        }
+
         var palavraEncontrada = { Id: id, Composicao: composicao };
         //Percorre o array de IDs Existentes: caso o id já esteja registrado retorna ao método de buscarPalavra
         //senão adiciona novo id e retorna a palavra adicionada
